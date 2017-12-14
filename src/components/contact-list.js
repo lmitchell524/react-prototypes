@@ -1,29 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ContactCard from './contact-card';
-import contactData from '../data/contacts';
 
-class ContactList extends Component{
-    constructor(props){
-        super(props);
+ function ContactList(props){
 
-        this.state = {
-            contacts: contactData
-        }
-    }
-
-    render(){
-        const list = this.state.contacts.map((item, index) => {
-            return(
-                <ContactCard key={index} contact={item}/>
-            )
-        });
-
+    const list = props.contacts.map((item, index) => {
         return(
-            <div className="col-8">
-                <div className="row">{list}</div>
-            </div>
+            <ContactCard delete={props.delete} cardIndex={index} key={index} contact={item}/>
         )
-    }
+    });
+
+    return(
+        <div className="col-8">
+            <div className="row">{list}</div>
+        </div>
+    )
 }
 
 export default ContactList;
