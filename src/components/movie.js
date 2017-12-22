@@ -6,7 +6,7 @@ export default props => {
     console.log('props:', info);
     return(
         <div className="card-column my-3">
-            <div className="text-center card roundedx">
+            <div className="text-center card rounded">
                 <div className="my-3 mx-3">
                     <img src={info["im:image"][2].label}/>
                 </div>
